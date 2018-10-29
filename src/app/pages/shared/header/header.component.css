@@ -1,0 +1,25 @@
+header {
+    margin-top: 1rem;
+}
+
+h1 {
+    overflow: hidden;
+    float: left;
+    margin-left: 2rem;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.hd-btns a {
+    appearance: button;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    width: 22%;
+    padding: 10px 0;
+    text-align: center;
+    background: rgb(98, 104, 97);
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+}

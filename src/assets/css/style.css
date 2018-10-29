@@ -1,0 +1,61 @@
+body {
+    height: 100vh;
+    background: rgba(141, 130, 130, 0.6);
+    font-family: 'Krub', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    color: #4C5252;
+    font-weight: 300;
+}
+
+section {
+    height: 100%;
+}
+
+a {
+    color: rgb(58, 124, 185);
+}
+
+input {
+    background-color: rgba(248, 242, 244, 0.5) !important;
+}
+
+.width-18 {
+    width: 18rem;
+    height: 25rem;
+}
+
+.width-39 {
+    width: 39rem;
+}
+
+.play,
+.pause {
+    position: absolute;
+    top: 25%;
+    left: 36%;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.play {
+    border-radius: 50px;
+}
+
+.pause {
+    border-radius: 8px;
+    line-height: 71px;
+}
+
+.progress {
+    height: 4px;
+    width: 0px;
+}
+
+.progress-bar {
+    background-color: #00a8ff;
+}
+
+.fa-ellipsis-h {
+    cursor: pointer;
+}
