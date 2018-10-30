@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { TrackService } from 'src/app/services/track.service';
 import { Tracks } from 'src/app/models/tracks.model';
 import {ActivatedRoute} from '@angular/router';
-import { TargetLocator } from 'selenium-webdriver';
+
 
 @Component({
   selector: 'app-tracks',
@@ -17,6 +17,7 @@ export class TracksComponent implements OnInit {
     termino: string;
     audio: any;
     time: any;
+    duration: number;
 
     constructor(
         public _trackService: TrackService,
@@ -59,7 +60,6 @@ export class TracksComponent implements OnInit {
                         this.tracks = resp;
                         this.busqueda = true;
                         this.flag = false;
-                        console.log(resp);
                     }
                 });
         } else {
@@ -68,9 +68,10 @@ export class TracksComponent implements OnInit {
     }
 
     playAudio(src, event) {
-
+        this.allPaused();
         if (this.audio.paused) {
             this.audio.src = src;
+            this.audio.load();
             this.audio.play();
             this.isPlaying (event);
             this.progressBar(event);
@@ -87,6 +88,10 @@ export class TracksComponent implements OnInit {
 
         this.audio.addEventListener('timeupdate', () => {
             this.time = (this.audio.currentTime / this.audio.duration) * 100 + '%';
+
+            if(this.audio.currentTime === this.audio.duration) {
+                this.isPaused(event);
+            }
 
             if (target.nextSibling.classList.contains('progress-bar')) {
                 target.nextSibling.style.width = this.time;
@@ -110,6 +115,16 @@ export class TracksComponent implements OnInit {
         target.nextSibling.style.width = '0px';
     }
 
+    allPaused () {
+        const target: any = document.getElementsByClassName('audio-icon');
+
+        for ( const ref of target) {
+            ref.classList.add('fa-play-circle', 'play');
+            ref.classList.remove('pause', 'fa-pause');
+            ref.nextSibling.classList.remove('progress-bar');
+            ref.nextSibling.style.width = '0px';
+        }
+    }
 
 
 
