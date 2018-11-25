@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 // Directivas
-import { PluginsDirective } from './directivas/plugins.directive';
+import { PluginsDirective } from './directives/plugins.directive';
+import { InfoTrackDirective } from './directives/info-track.directive';
 
 // Rutas
 import { APP_ROUTES } from './app.routes';
@@ -19,7 +20,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/login/register.component';
 import { PlaylistComponent } from './pages/playlists/playlist.component';
 import { HeaderComponent } from './pages/shared/header/header.component';
-import { TracksComponent } from './pages/tracks/tracks.component';
+import { TracksComponent } from './pages/tracks/tracks/tracks.component';
+import { InfoTracksComponent } from './pages/tracks/info-tracks/info-tracks.component';
+import { SearchComponent } from './pages/shared/search/search.component';
+
 
 
 
@@ -32,7 +36,10 @@ import { TracksComponent } from './pages/tracks/tracks.component';
     PlaylistComponent,
     HeaderComponent,
     TracksComponent,
-    PluginsDirective
+    PluginsDirective,
+    InfoTrackDirective,
+    InfoTracksComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

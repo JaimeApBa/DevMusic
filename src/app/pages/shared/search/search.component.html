@@ -1,0 +1,9 @@
+<div class="row animated fadeIn col-xs-12">
+    <div class="width-80 ml-5 mt-5">
+        <input #input (keyup.enter)="getTracks(input.value)" type="text" class="form-control width-30 float-left" placeholder="Buscar canción...">
+
+        <small class="float-left ml-3 alert alert-danger" *ngIf="!busqueda">
+          No se ha encontrado ninguna coincidencia
+      </small>
+    </div>
+</div>

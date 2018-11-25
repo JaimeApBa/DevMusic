@@ -1,7 +1,9 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { TrackService } from 'src/app/services/track.service';
 import { Tracks } from 'src/app/models/tracks.model';
 import {ActivatedRoute} from '@angular/router';
+
 
 
 @Component({
@@ -14,7 +16,6 @@ export class TracksComponent implements OnInit {
     tracks: Tracks[];
     busqueda = true;
     flag = true;
-    termino: string;
     audio: any;
     time: any;
     duration: number;
@@ -26,14 +27,12 @@ export class TracksComponent implements OnInit {
         activatedRoute.params.subscribe( params => {
             const termino = params['termino'];
             this.cargarTracks(termino);
-        });
-
+          });
     }
 
     ngOnInit() {
         this.audio = new Audio();
         this.busqueda = true;
-        console.log(this.busqueda);
         this.cargarPopularTracks();
     }
 
@@ -45,15 +44,13 @@ export class TracksComponent implements OnInit {
                     this.busqueda = true;
                     this.flag = true;
                     this.tracks = resp;
-                    console.log(resp);
                 });
     }
     cargarTracks(termino: string) {
-
         if (termino !== '') {
-
             this._trackService.cargarTracks( termino )
                 .subscribe((resp: any) => {
+                    console.log(resp);
                     if (resp.length === 0) {
                         this.busqueda = false;
                     } else {
@@ -89,7 +86,7 @@ export class TracksComponent implements OnInit {
         this.audio.addEventListener('timeupdate', () => {
             this.time = (this.audio.currentTime / this.audio.duration) * 100 + '%';
 
-            if(this.audio.currentTime === this.audio.duration) {
+            if (this.audio.currentTime === this.audio.duration) {
                 this.isPaused(event);
             }
 

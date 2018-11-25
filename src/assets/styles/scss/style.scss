@@ -1,6 +1,7 @@
+$body-color: rgba(141, 130, 130, 0.6);
 body {
     height: 100vh;
-    background: rgba(141, 130, 130, 0.6);
+    background: $body-color;
     font-family: 'Krub', sans-serif;
     margin: 0;
     overflow-x: hidden;
@@ -25,8 +26,8 @@ input {
     height: 25rem;
 }
 
-.width-39 {
-    width: 39rem;
+.width-80 {
+    width: 80%;
 }
 
 .play,
@@ -56,6 +57,31 @@ input {
     background-color: #00a8ff;
 }
 
+.info {
+    width: 20px;
+    height: 10px;
+    float: right;
+}
+
 .fa-ellipsis-h {
     cursor: pointer;
+}
+
+.track-menu {
+    width: 15.6rem;
+    height: 40px;
+    background: white;
+    position: absolute;
+    left: 0;
+    top: 85%;
+    line-height: 3em;
+    transition: width .5s;
+    cursor: pointer;
+    i {
+        margin-right: 20px;
+    }
+}
+
+.hidden {
+    display: none;
 }

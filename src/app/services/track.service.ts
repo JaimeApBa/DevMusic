@@ -27,17 +27,17 @@ export class TrackService {
               return throwError(err);
           }));
   }
+
   cargarTracks( album_name: string ) {
     const url = URL_SERVICIOS + 'tracks' + URL_DATA + '&artist_name=' + album_name;
 
     return this.http.get(url)
           .pipe( map( (resp: any) => {
-              // console.log(resp);
-
               return resp.results;
           }),
           catchError ((err) => {
               return throwError(err);
           }));
   }
+
 }

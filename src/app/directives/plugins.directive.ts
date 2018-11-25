@@ -12,7 +12,7 @@ export class PluginsDirective {
   constructor( ) { }
 
   @HostListener('click') onClick() {
-    init_plugins();
+  init_plugins();
   }
 
 }

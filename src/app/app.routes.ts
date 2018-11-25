@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/login/register.component';
 import { PlaylistComponent } from './pages/playlists/playlist.component';
-import { TracksComponent } from './pages/tracks/tracks.component';
+import { TracksComponent } from './pages/tracks/tracks/tracks.component';
 import { PagesComponent } from './pages/pages.component';
 
 // Componentes
