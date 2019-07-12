@@ -20,7 +20,8 @@ export class Tracks {
         public shorturl: string,
         public shareurl: string,
         public image: string,
-        public stats: Stats
-
+        public stats: Stats,
+        public lyrics: string
     ) {}
 }
+

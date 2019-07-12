@@ -1,3 +1,4 @@
+import { URL_CONFIG } from './../config/config';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS, URL_DATA } from '../config/config';
@@ -16,11 +17,10 @@ export class TrackService {
 
   cargarPopularTracks() {
 
-    const url = URL_SERVICIOS + 'tracks' + URL_DATA + '&boost=popularity_month';
+    const url = URL_SERVICIOS + 'tracks' + URL_DATA + '&include=musicinfo+lyrics+licenses+stats&boost=popularity_month&limit=100';
 
     return this.http.get(url)
           .pipe( map( (resp: any) => {
-
               return resp.results;
           }),
           catchError ((err) => {
@@ -29,13 +29,37 @@ export class TrackService {
   }
 
   cargarTracks( album_name: string ) {
-    const url = URL_SERVICIOS + 'tracks' + URL_DATA + '&artist_name=' + album_name;
+    const url = URL_SERVICIOS + 'tracks' + URL_DATA + '&artist_name=' + album_name +
+                '&include=musicinfo+lyrics+licenses+stats&order=album_name&limit=100';
 
     return this.http.get(url)
           .pipe( map( (resp: any) => {
               return resp.results;
           }),
           catchError ((err) => {
+              return throwError(err);
+          }));
+  }
+
+  similarTrack(id) {
+
+  }
+
+  downloadFile(id) {
+    const url = URL_SERVICIOS + 'tracks/file' + URL_CONFIG + 'id=' + id;
+
+    return window.open(url, '_self');
+  }
+  getInfoTrack(id) {
+    const url = URL_SERVICIOS + 'tracks' + URL_DATA +
+                'include=musicinfo+lyrics+licenses+stats&id=' + id;
+
+    return this.http.get(url)
+          .pipe( map( (resp: any) => {
+              return resp.results;
+          }),
+          catchError ((err) => {
+            console.log(err);
               return throwError(err);
           }));
   }

@@ -1,5 +1,7 @@
 $body-color: rgba(141, 130, 130, 0.6);
 body {
+    margin: 0;
+    padding: 0;
     height: 100vh;
     background: $body-color;
     font-family: 'Krub', sans-serif;
@@ -84,4 +86,13 @@ input {
 
 .hidden {
     display: none;
+}
+
+.modal-content {
+    width: 600px !important;
+}
+
+.modal-body {
+    height: 700px;
+    overflow-y: scroll !important;
 }

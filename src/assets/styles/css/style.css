@@ -1,70 +1,92 @@
 body {
-  height: 100vh;
-  background: rgba(141, 130, 130, 0.6);
-  font-family: 'Krub', sans-serif;
-  margin: 0;
-  overflow-x: hidden;
-  color: #4C5252;
-  font-weight: 300; }
+    height: 100vh;
+    background: rgb(7, 7, 7, 0.95);
+    font-family: 'Krub', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    color: #4C5252;
+    font-weight: 300;
+}
 
 section {
-  height: 100%; }
+    height: 100%;
+}
 
 a {
-  color: #3a7cb9; }
+    color: #3a7cb9;
+}
 
 input {
-  background-color: rgba(248, 242, 244, 0.5) !important; }
+    background-color: rgba(248, 242, 244, 0.5) !important;
+}
 
 .width-18 {
-  width: 18rem;
-  height: 25rem; }
+    width: 18rem;
+    height: 25rem;
+}
 
 .width-80 {
-  width: 80%; }
+    width: 80%;
+}
+
+.title {
+    color: white;
+    font-family: 'Merriweather', serif;
+}
 
 .play,
 .pause {
-  position: absolute;
-  top: 25%;
-  left: 36%;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.8); }
+    position: absolute;
+    top: 25%;
+    left: 36%;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+}
 
 .play {
-  border-radius: 50px; }
+    border-radius: 50px;
+}
 
 .pause {
-  border-radius: 8px;
-  line-height: 70px; }
+    border-radius: 8px;
+    line-height: 70px;
+}
 
 .progress {
-  height: 4px;
-  width: 0px; }
+    height: 4px;
+    width: 0px;
+}
 
 .progress-bar {
-  background-color: #00a8ff; }
+    background-color: #00a8ff;
+}
 
 .info {
-  width: 20px;
-  height: 10px;
-  float: right; }
+    width: 20px;
+    height: 10px;
+    float: right;
+}
 
 .fa-ellipsis-h {
-  cursor: pointer; }
+    cursor: pointer;
+}
 
 .track-menu {
-  width: 15.6rem;
-  height: 40px;
-  background: white;
-  position: absolute;
-  left: 0;
-  top: 85%;
-  line-height: 3em;
-  transition: width .5s;
-  cursor: pointer; }
-  .track-menu i {
-    margin-right: 20px; }
+    width: 15.6rem;
+    height: 40px;
+    background: white;
+    position: absolute;
+    left: 0;
+    top: 85%;
+    line-height: 3em;
+    transition: width .5s;
+    cursor: pointer;
+}
+
+.track-menu i {
+    margin-right: 20px;
+}
 
 .hidden {
-  display: none; }
+    display: none;
+}

@@ -1,10 +1,10 @@
 <div class="info" appInfoTrack>
     <i class="fa fa-ellipsis-h float-right"></i>
     <div class="track-menu text-center hidden">
-        <i title="Info" class="fas fa-info-circle fa-lg"></i>
+        <i (click)="infoTracks(track.id)" title="Info" class="fas fa-info-circle fa-lg"></i>
         <i title="Añadir a playlist" class="fas fa-plus-circle fa-lg"></i>
-        <i title="Descargar" class="fas fa-download fa-lg"></i>
-        <i title="Letra" class="fas fa-receipt fa-lg"></i>
+        <i (click)="downloadTrack(track.id)" title="Descargar" class="fas fa-download fa-lg"></i>
+        <i (click)="lyricsTracks(track.id)" title="Letra" class="fas fa-receipt fa-lg" data-toggle="modal" data-target="#modal-lyrics"></i>
         <i title="Busca canciones similares" class="fas fa-clone"></i>
     </div>
 </div>

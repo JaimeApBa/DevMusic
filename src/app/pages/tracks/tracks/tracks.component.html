@@ -1,24 +1,23 @@
-<app-search (inputForm)="cargarTracks($event)"></app-search>
-<div>
-    <h3 class="ml-5 mt-4" *ngIf="flag === true">Los más populares de este mes</h3>
-    <h3 class="ml-5 mt-4" *ngIf="flag === false">Coincidencias</h3>
-    <div class="row animated fadeIn col-xs-12">
-        <div class="front card width-18 mt-3 mb-5 ml-5" *ngFor="let track of tracks">
-            <div class="text-center">
-                <img *ngIf="track.image !== null" class="card-img-top" src="{{track.image}}" alt="Album image">
-                <img *ngIf="track.image === null" class="card-img-top" src="assets/images/no-image.png" height="275px" width="auto" alt="No image">
-                <i (click)="playAudio( track.audio, $event )" class="audio-icon fa fa-play-circle fa-5x play"></i>
-                <div class="progress"></div>
-            </div>
-            <div class="card-body ">
-                <div class="card-title ">
-                    <p class="font-weight-bold ">
-                        {{ track.name }}
-                    </p>
-                    <div>
-                        <small>{{ track.artist_name }}</small>
-                        <app-info-tracks></app-info-tracks>
-                    </div>
+<app-search (inputForm)="cargarTracks($event)" [(busqueda)]="busqueda"></app-search>
+
+<h3 class="ml-5 mt-4" *ngIf="flag === true">Los más populares de este mes</h3>
+<h3 class="ml-5 mt-4" *ngIf="flag === false">Coincidencias</h3>
+<div class="row animated fadeIn col-xs-12">
+    <div class="front card width-18 mt-3 mb-5 ml-5" *ngFor="let track of tracks">
+        <div class="text-center">
+            <img *ngIf="track.image !== null" class="card-img-top" src="{{track.image}}" alt="Album image">
+            <img *ngIf="track.image === null" class="card-img-top" src="assets/images/no-image.png" height="275px" width="auto" alt="No image">
+            <i (click)="playAudio( track.audio, $event )" class="audio-icon fa fa-play-circle fa-5x play"></i>
+            <div class="progress"></div>
+        </div>
+        <div class="card-body ">
+            <div class="card-title ">
+                <p class="font-weight-bold ">
+                    {{ track.name }}
+                </p>
+                <div>
+                    <small>{{ track.artist_name }}</small>
+                    <app-info-tracks [(track)]="track"></app-info-tracks>
                 </div>
             </div>
         </div>

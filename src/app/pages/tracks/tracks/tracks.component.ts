@@ -14,7 +14,7 @@ import {ActivatedRoute} from '@angular/router';
 export class TracksComponent implements OnInit {
 
     tracks: Tracks[];
-    busqueda = true;
+    busqueda;
     flag = true;
     audio: any;
     time: any;
@@ -50,7 +50,6 @@ export class TracksComponent implements OnInit {
         if (termino !== '') {
             this._trackService.cargarTracks( termino )
                 .subscribe((resp: any) => {
-                    console.log(resp);
                     if (resp.length === 0) {
                         this.busqueda = false;
                     } else {

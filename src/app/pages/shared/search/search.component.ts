@@ -1,5 +1,5 @@
 
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchComponent implements OnInit {
 
   @Output() inputForm = new EventEmitter();
+  @Input() busqueda: boolean;
 
   constructor(
     public activatedRoute: ActivatedRoute
@@ -27,4 +28,5 @@ export class SearchComponent implements OnInit {
    getTracks(termino) {
       this.inputForm.emit(termino);
    }
+
 }

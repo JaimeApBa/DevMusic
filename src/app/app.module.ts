@@ -23,6 +23,7 @@ import { HeaderComponent } from './pages/shared/header/header.component';
 import { TracksComponent } from './pages/tracks/tracks/tracks.component';
 import { InfoTracksComponent } from './pages/tracks/info-tracks/info-tracks.component';
 import { SearchComponent } from './pages/shared/search/search.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 
@@ -39,7 +40,8 @@ import { SearchComponent } from './pages/shared/search/search.component';
     PluginsDirective,
     InfoTrackDirective,
     InfoTracksComponent,
-    SearchComponent
+    SearchComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
